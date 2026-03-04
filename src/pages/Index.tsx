@@ -82,7 +82,7 @@ const Index = () => {
               href="https://maps.app.goo.gl/nnGeqrLx9f8CwiS48"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-white rounded-lg px-4 py-2"
+              className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-black rounded-lg px-4 py-2"
               style={{ color: "#4285f4" }}
             >
               <GoogleMapsIcon />
@@ -92,9 +92,9 @@ const Index = () => {
               href="https://www.instagram.com/eca_do_queiros/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-white rounded-lg px-4 py-2"
+              className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-black rounded-lg px-4 py-2"
               style={{
-                background: "white",
+                background: "black",
               }}
             >
               <InstagramIcon />
@@ -109,7 +109,7 @@ const Index = () => {
           <div className="flex items-center gap-3">
             {isAdmin && <AddProductDialog onAdd={handleAdd} />}
             <div className="relative w-full sm:w-72">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-black" />
               <Input
                 placeholder="Buscar producto"
                 value={search}

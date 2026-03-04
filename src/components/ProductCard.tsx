@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, Upload, X } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import type { Product } from "@/data/products";
+import { categories, type Product } from "@/data/products";
 
 interface ProductCardProps {
   product: Product;
@@ -19,7 +20,27 @@ const ProductCard = ({ product, isAdmin, onDelete, onUpdate }: ProductCardProps)
   const [name, setName] = useState(product.name);
   const [price, setPrice] = useState(product.price.toString());
   const [stock, setStock] = useState(product.stock.toString());
+  const [category, setCategory] = useState(product.category);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [dragActive, setDragActive] = useState(false);
   const { toast } = useToast();
+
+  const handleFile = (file: File) => {
+    if (!file.type.startsWith("image/")) {
+      toast({ title: "Error", description: "Solo se permiten archivos de imagen.", variant: "destructive" });
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => setImagePreview(e.target?.result as string);
+    reader.readAsDataURL(file);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragActive(false);
+    if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0]);
+  };
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +50,8 @@ const ProductCard = ({ product, isAdmin, onDelete, onUpdate }: ProductCardProps)
       name,
       price: parseFloat(price),
       stock: parseInt(stock),
+      category,
+      image: imagePreview || product.image,
     });
     setEditOpen(false);
     toast({ title: "Producto actualizado", description: `${name} fue actualizado.` });
@@ -67,6 +90,8 @@ const ProductCard = ({ product, isAdmin, onDelete, onUpdate }: ProductCardProps)
                 setName(product.name);
                 setPrice(product.price.toString());
                 setStock(product.stock.toString());
+                setCategory(product.category);
+                setImagePreview(null);
                 setEditOpen(true);
               }}>
                 <Pencil className="h-3 w-3" /> Editar
@@ -99,6 +124,57 @@ const ProductCard = ({ product, isAdmin, onDelete, onUpdate }: ProductCardProps)
               <div className="space-y-2">
                 <Label htmlFor={`edit-stock-${product.id}`} className="text-black">Disponibles</Label>
                 <Input id={`edit-stock-${product.id}`} type="number" min="0" value={stock} onChange={(e) => setStock(e.target.value)} className="bg-white text-black placeholder:text-black/50" />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label className="text-black">Categoría</Label>
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {categories.map((c) => (
+                    <SelectItem key={c} value={c}>{c}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label className="text-black">Imagen</Label>
+              <div
+                className={`border-2 border-dashed rounded-lg p-4 text-center cursor-pointer transition-colors ${dragActive ? 'border-primary bg-primary/10' : 'border-border hover:border-primary/50'}`}
+                onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
+                onDragLeave={() => setDragActive(false)}
+                onDrop={handleDrop}
+                onClick={() => fileInputRef.current?.click()}
+              >
+                {imagePreview ? (
+                  <div className="relative inline-block">
+                    <img src={imagePreview} alt="Preview" className="h-32 w-32 object-cover rounded-md mx-auto" />
+                    <button
+                      type="button"
+                      className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground rounded-full p-1"
+                      onClick={(e) => { e.stopPropagation(); setImagePreview(null); }}
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center gap-2 text-muted-foreground py-2">
+                    <img src={product.image} alt="Actual" className="h-24 w-24 object-cover rounded-md" />
+                    <div className="flex items-center gap-1 text-sm">
+                      <Upload className="h-4 w-4" />
+                      <span>Cambiar imagen</span>
+                    </div>
+                  </div>
+                )}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+                />
               </div>
             </div>
             <Button type="submit" className="w-full bg-blue-800 hover:bg-blue-900 text-white">Guardar cambios</Button>
