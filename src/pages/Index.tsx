@@ -5,7 +5,21 @@ import LoginDialog from "@/components/LoginDialog";
 import AddProductDialog from "@/components/AddProductDialog";
 import ProductCard from "@/components/ProductCard";
 import { initialProducts, type Product } from "@/data/products";
-import googleMapsIcon from "@/assets/google-maps-icon.png";
+const GoogleMapsPin = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24" className="h-6 w-auto flex-shrink-0">
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 5.25 8 16 8 16s8-10.75 8-16c0-4.42-3.58-8-8-8z" fill="#ea4335"/>
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 5.25 8 16 8 16s8-10.75 8-16c0-4.42-3.58-8-8-8z" fill="url(#gm-grad)"/>
+    <defs>
+      <linearGradient id="gm-grad" x1="0" y1="0" x2="16" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#4285f4"/>
+        <stop offset="30%" stopColor="#34a853"/>
+        <stop offset="60%" stopColor="#fbbc04"/>
+        <stop offset="100%" stopColor="#ea4335"/>
+      </linearGradient>
+    </defs>
+    <circle cx="8" cy="8" r="3" fill="#1a0dab"/>
+  </svg>
+);
 
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6 flex-shrink-0">
@@ -52,8 +66,9 @@ const Index = () => {
         <div className="flex items-start justify-between">
           <div className="flex-1" />
           <h1
-            className="text-4xl md:text-5xl font-bold text-foreground text-center flex-shrink-0"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            className="text-4xl md:text-5xl font-bold text-center flex-shrink-0"
+            style={{ fontFamily: "'Cormorant Garamond', serif", color: "#1a3a1a" }}
+            
           >
             Vivero Parque Eca do Queiros
           </h1>
@@ -76,7 +91,7 @@ const Index = () => {
               className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-black rounded-lg px-4 py-2"
               style={{ color: "#4285f4" }}
             >
-              <img src={googleMapsIcon} alt="Google Maps" className="h-6 w-6 flex-shrink-0" />
+              <GoogleMapsPin />
               <span>Ubicación</span>
             </a>
             <a
@@ -100,12 +115,12 @@ const Index = () => {
           <div className="flex items-center gap-3">
             {isAdmin && <AddProductDialog onAdd={handleAdd} />}
             <div className="relative w-full sm:w-72">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-black" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
               <Input
                 placeholder="Buscar producto"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-10 text-lg font-bold placeholder:text-lg placeholder:font-bold placeholder:text-black text-black border-2 border-foreground/40"
+                className="pl-10 text-base font-semibold placeholder:text-base placeholder:font-semibold placeholder:text-gray-500 text-black border-2 border-foreground/40"
               />
             </div>
           </div>
