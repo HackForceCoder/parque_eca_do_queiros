@@ -108,12 +108,12 @@ const Index = () => {
           <div className="flex items-center gap-3">
             {isAdmin && <AddProductDialog onAdd={handleAdd} />}
             <div className="relative w-full sm:w-72">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/60" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground" />
               <Input
                 placeholder="Buscar producto"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9 text-sm font-medium placeholder:text-sm placeholder:font-medium placeholder:text-foreground/60 text-foreground border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9"
+                className="pl-9 text-base font-medium placeholder:text-base placeholder:font-medium placeholder:text-foreground text-foreground border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9"
               />
             </div>
           </div>
