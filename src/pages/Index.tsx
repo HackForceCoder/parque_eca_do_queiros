@@ -82,10 +82,9 @@ const Index = () => {
               href="https://maps.app.goo.gl/nnGeqrLx9f8CwiS48"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-black rounded-lg px-4 py-2"
-              style={{ color: "#4285f4" }}
+              className="flex items-center gap-2 font-semibold text-lg hover:opacity-80 transition-opacity bg-black rounded-lg px-4 py-2 text-white"
             >
-              <GoogleMapsPin />
+              <LocationPin />
               <span>Ubicación</span>
             </a>
             <a
