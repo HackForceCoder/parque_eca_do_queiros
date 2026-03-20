@@ -66,7 +66,7 @@ const Navbar = () => {
               className="flex items-center gap-1.5 text-white/90 hover:text-white transition-colors"
               aria-label="Ubicación"
             >
-              <MapPin className="h-5 w-5 text-red-400" />
+              <MapPin className="h-[1.875rem] w-[1.875rem] text-red-400" />
             </a>
             <a
               href="https://www.instagram.com/eca_do_queiros/"
