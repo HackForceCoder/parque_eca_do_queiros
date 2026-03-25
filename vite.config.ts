@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/e-a-s-garden-catalog/",
+  base: "/parque_eca_do_queiros/",
 
   server: {
     host: "::",
