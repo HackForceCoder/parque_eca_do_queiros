@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/parque_eca_do_queiros/",
+  base: "/parque_eca_do_queiros/", // HackForceCoder repository name, for GitHub Pages
 
   server: {
     host: "::",
