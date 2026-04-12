@@ -58,7 +58,9 @@ const Conocenos = () => {
             className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Area Natural Protegida Eca do Queiros
+            Area Natural Protegida
+            <br />
+            Eca do Queiros
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Un espacio verde que converge vivero, cafetería y actividades al aire libre para disfrutar la naturaleza.
