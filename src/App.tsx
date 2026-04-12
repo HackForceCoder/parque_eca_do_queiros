@@ -9,6 +9,7 @@ import Conocenos from "./pages/Conocenos";
 import Vivero from "./pages/Vivero";
 import Cafeteria from "./pages/Cafeteria";
 import Actividades from "./pages/Actividades";
+import Historia from "./pages/Historia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/vivero" element={<Vivero />} />
             <Route path="/cafeteria" element={<Cafeteria />} />
             <Route path="/actividades" element={<Actividades />} />
+            <Route path="/historia" element={<Historia />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

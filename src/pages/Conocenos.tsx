@@ -58,9 +58,7 @@ const Conocenos = () => {
             className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Area Natural Protegida
-            <br />
-            Eca do Queiros
+            Area Natural Protegida Eca do Queiros
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Un espacio verde donde convergen vivero, cafetería y actividades al aire libre para disfrutar en familia.
@@ -68,8 +66,13 @@ const Conocenos = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-[#1b4332] hover:bg-white/90 font-semibold text-base px-8 h-12 rounded-lg shadow-lg active:scale-[0.97] transition-transform">
               <Link to="/vivero">
-                Explorar el vivero
+                Conoce el vivero
                 <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 font-semibold text-base px-8 h-12 rounded-lg active:scale-[0.97] transition-transform">
+              <Link to="/historia">
+                Nuestra historia
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 font-semibold text-base px-8 h-12 rounded-lg active:scale-[0.97] transition-transform">

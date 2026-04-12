@@ -64,7 +64,7 @@ const Index = () => {
             style={{ fontFamily: "'Cormorant Garamond', serif", color: "#1a3a1a" }}
             
           >
-            Area Natural Protegida ECA do Queiros
+            Area Natural Protegida Eca do Queiros
           </h1>
           <div className="flex-1 flex justify-end">
             <LoginDialog

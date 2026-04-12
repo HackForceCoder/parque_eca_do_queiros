@@ -30,6 +30,7 @@ const navLinks = [
   { to: "/vivero", label: "Vivero" },
   { to: "/cafeteria", label: "Cafetería" },
   { to: "/actividades", label: "Actividades" },
+  { to: "/historia", label: "Historia" },
 ];
 
 const Navbar = () => {
