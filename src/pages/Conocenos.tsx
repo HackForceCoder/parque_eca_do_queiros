@@ -58,7 +58,7 @@ const Conocenos = () => {
             className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            Vivero Parque
+            Area Natural Protegida
             <br />
             Eca do Queiros
           </h1>
