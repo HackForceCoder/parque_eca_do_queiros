@@ -1,14 +1,16 @@
 const history_text =
     `
     El Área Natural Protegida Eca do Queiros fue concebido como un refugio verde en medio de la ciudad, un lugar pensado no solo para descansar,
-    sino para descubrir, convivir y desconectarse del ritmo urbano.
+    sino para descubrir, convivir y desconectarse del ritmo urbano.\n\n
     
     Con el paso del tiempo, este espacio ha ido transformándose, integrando nuevas áreas y mejorando sus instalaciones, lo que lo convierte hoy
-    en un sitio lleno de vida, donde siempre hay algo nuevo por explorar.
+    en un sitio lleno de vida, donde siempre hay algo nuevo por explorar.\n\n
 
     Actualmente, el parque no es solo un punto de encuentro, sino una experiencia completa: puedes disfrutar de actividades culturales,
     hacer ejercicio al aire libre o simplemente relajarte rodeado de naturaleza. Además, es un excelente espacio para pasear con perros,
-    convivir en familia o pasar un momento tranquilo. Entre sus atractivos destacan su vivero, ideal para los amantes de las plantas,
+    convivir en familia o pasar un momento tranquilo.\n\n
+    
+    Entre sus atractivos destacan su vivero, ideal para los amantes de las plantas,
     y su cafetería, perfecta para hacer una pausa y disfrutar del entorno. Sin duda, es un lugar que invita a visitarlo y vivirlo.
     `;
 
