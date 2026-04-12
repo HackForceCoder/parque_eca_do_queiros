@@ -26,9 +26,12 @@ const Historia = () => {
                 <p className="text-lg text-gray-700 leading-relaxed">
                     {history_text[0]}
                     <br />
+                    <br />
                     {history_text[1]}
                     <br />
+                    <br />
                     {history_text[2]}
+                    <br />
                     <br />
                     {history_text[3]}
                 </p>
