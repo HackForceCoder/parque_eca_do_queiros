@@ -24,26 +24,40 @@ const history_text = [
 const Historia = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-green-50 p-6">
-            <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl text-center">
-                <h1 className="text-4xl font-bold mb-6" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#1b4332" }}>
+            <div className="bg-white rounded-lg shadow-lg p-8 max-w-5xl w-full">
+                <h1 className="text-4xl font-bold mb-8 text-center" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#1b4332" }}>
                     Nuestra Historia
                 </h1>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                    {history_text[0]}
-                    <br />
-                    <img src={panoramica} alt="Panoramica" />
-                    <br />
-                    {history_text[1]}
-                    <br />
-                    <img src={pasillo} alt="Pasillo" />
-                    <br />
-                    {history_text[2]}
-                    <br />
-                    <img src={actividades} alt="Actividades" />
-                    <br />
-                    {history_text[3]}
-                    <img src={arbol} alt="Arbol" />
-                </p>
+
+                <div className="space-y-12">
+                    <section className="space-y-6 text-center">
+                        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                            {history_text[0]}
+                        </p>
+                        <img src={panoramica} alt="Panorámica" className="mx-auto rounded-xl shadow-md w-full max-w-3xl object-cover" />
+                    </section>
+
+                    <section className="flex flex-col lg:flex-row items-center gap-6 text-left">
+                        <img src={pasillo} alt="Pasillo" className="w-full lg:w-1/2 rounded-xl shadow-md object-cover max-h-[420px]" />
+                        <p className="text-lg text-gray-700 leading-relaxed lg:w-1/2">
+                            {history_text[1]}
+                        </p>
+                    </section>
+
+                    <section className="flex flex-col lg:flex-row items-center gap-6 text-left">
+                        <p className="text-lg text-gray-700 leading-relaxed lg:w-1/2">
+                            {history_text[2]}
+                        </p>
+                        <img src={actividades} alt="Actividades" className="w-full lg:w-1/2 rounded-xl shadow-md object-cover max-h-[420px]" />
+                    </section>
+
+                    <section className="flex flex-col lg:flex-row items-center gap-6 text-left">
+                        <img src={arbol} alt="Árbol" className="w-full lg:w-1/2 rounded-xl shadow-md object-cover max-h-[420px]" />
+                        <p className="text-lg text-gray-700 leading-relaxed lg:w-1/2">
+                            {history_text[3]}
+                        </p>
+                    </section>
+                </div>
             </div>
         </div>
     )
