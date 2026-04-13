@@ -1,9 +1,9 @@
 
 // Imagenes
-import panoramica from "../assets/history_pictures/actividades.jpg";
-import pasillo from "../assets/history_pictures/actividades.jpg";
+import panoramica from "../assets/history_pictures/panoramica.jpg";
+import pasillo from "../assets/history_pictures/pasillo.jpg";
 import actividades from "../assets/history_pictures/actividades.jpg";
-import arbol from "../assets/history_pictures/actividades.jpg";
+import arbol from "../assets/history_pictures/arbol.jpg";
 
 const history_text = [
     `El Área Natural Protegida Eca do Queiros fue concebido como un refugio verde en medio de la ciudad, un lugar pensado no solo para descansar,
@@ -31,18 +31,18 @@ const Historia = () => {
                 <p className="text-lg text-gray-700 leading-relaxed">
                     {history_text[0]}
                     <br />
-                    <img src={panoramica} alt="Actividades" />
+                    <img src={panoramica} alt="Panoramica" />
                     <br />
                     {history_text[1]}
                     <br />
-                    <img src={pasillo} alt="Actividades" />
+                    <img src={pasillo} alt="Pasillo" />
                     <br />
                     {history_text[2]}
                     <br />
                     <img src={actividades} alt="Actividades" />
                     <br />
                     {history_text[3]}
-                    <img src={arbol} alt="Actividades" />
+                    <img src={arbol} alt="Arbol" />
                 </p>
             </div>
         </div>
