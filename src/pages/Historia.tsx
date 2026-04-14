@@ -30,17 +30,16 @@ const Historia = () => {
                     Nuestra Historia
                 </h1>
                 <br />
-                <br />
                 <div className="space-y-12">
                     <section className="flex flex-col lg:flex-row items-center gap-6 text-left px-4 lg:px-0">
                         <p className="text-[1.25rem] text-gray-700 leading-relaxed lg:w-7/12">
                             {history_text[0]}
                         </p>
-                        <img src={panoramica} alt="Panorámica" className="w-full lg:w-5/12 h-[250px] rounded-xl shadow-md object-cover" />
+                        <img src={panoramica} alt="Panorámica" className="w-full lg:w-5/12 h-[280px] rounded-xl shadow-md object-cover" />
                     </section>
 
                     <section className="flex flex-col lg:flex-row items-center gap-6 text-left px-4 lg:px-0">
-                        <img src={pasillo} alt="Pasillo" className="w-full lg:w-5/12 h-[250px] rounded-xl shadow-md object-cover" />
+                        <img src={pasillo} alt="Pasillo" className="w-full lg:w-5/12 h-[280px] rounded-xl shadow-md object-cover" />
                         <p className="text-[1.25rem] text-gray-700 leading-relaxed lg:w-7/12">
                             {history_text[1]}
                         </p>
@@ -50,11 +49,11 @@ const Historia = () => {
                         <p className="text-[1.25rem] text-gray-700 leading-relaxed lg:w-7/12">
                             {history_text[2]}
                         </p>
-                        <img src={actividades} alt="Actividades" className="w-full lg:w-5/12 h-[250px] rounded-xl shadow-md object-cover" />
+                        <img src={actividades} alt="Actividades" className="w-full lg:w-5/12 h-[280px] rounded-xl shadow-md object-cover" />
                     </section>
 
                     <section className="flex flex-col lg:flex-row items-center gap-6 text-left px-4 lg:px-0">
-                        <img src={arbol} alt="Árbol" className="w-full lg:w-5/12 h-[250px] rounded-xl shadow-md object-cover" />
+                        <img src={arbol} alt="Árbol" className="w-full lg:w-5/12 h-[280px] rounded-xl shadow-md object-cover" />
                         <p className="text-[1.25rem] text-gray-700 leading-relaxed lg:w-7/12">
                             {history_text[3]}
                         </p>
