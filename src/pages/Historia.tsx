@@ -21,7 +21,7 @@ const history_text = [
     disfrutar del entorno. Sin duda, es un lugar que invita a visitarlo y vivirlo.`
 ];
 
-
+// Componente
 const Historia = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-green-50 p-6">
